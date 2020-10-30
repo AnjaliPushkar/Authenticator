@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fiexd-top">
+  <button class="btn btn-lg navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Authenticator</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="loginbutton">
+    <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-link"style="width:auto;">Login</button>
+    <div id="id01" class="modal">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form class="modal-content animate" action="#" method="post">
+          <div class="container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+          <div class="login-container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <br />
+            <button class="btnpsw" type="submit">Login</button><br />
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+          <div class="cancel-container" style="background-color:#f1f1f1">
+            <span class="new-user">New user? <a href="#">Sign up</a></span><br />
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
