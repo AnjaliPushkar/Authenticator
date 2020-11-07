@@ -6,8 +6,8 @@ body {
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 10px 18px;
+  margin: 2px 0 18px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -144,4 +144,51 @@ span.psw {
      width: 100%;
   }
 }
-/*style for connection page*/
+/*style for Register page*/
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 1rem 7rem;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction:column;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 1rem;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.small-headings {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color:#8c1aff;
+  color: #8c1aff;
+}
+/* Change styles for extra small screens */
+@media (max-width: 300px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}

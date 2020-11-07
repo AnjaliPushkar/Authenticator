@@ -6,9 +6,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
     <title></title>
   </head>
@@ -21,7 +18,7 @@
           </button>
           <a class="navbar-brand order-1 mr-auto" href="#">Authenticator</a>
           <div class="loginbutton order-3">
-            <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-link"style="width:auto;">Login</button>
+              <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-link"style="width:auto; text-decoration:none;">Login</button>
             <div id="id01" class="modal">
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <form class="modal-content animate" action="#" method="post">
@@ -37,11 +34,11 @@
                       <input type="checkbox" checked="checked" name="remember"> Remember me
                     </label>
                     <br />
-                    <button class="btnpsw" type="submit">Login</button><br />
+                    <button class="btnpsw" type="submit">Login</button>
                     <span class="psw">Forgot <a href="#">password?</a></span>
                   </div>
                   <div class="cancel-container" style="background-color:#f1f1f1">
-                    <span class="new-user">New user? <a href="#">Sign up</a></span><br />
+                    <span class="new-user">New user? <a href="Registerpage.html">Register</a></span><br />
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                   </div>
                 </form>
@@ -64,10 +61,13 @@
         </nav>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
   <script>
 // Get the modal
-var modal = document.getElementById('id01');
+var modal = $("#id01");
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
