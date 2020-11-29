@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from .import views
 from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name = 'homepage'),
     path('login/', views.login, name = 'login'),
     path('signup/', views.signup, name = 'signup'),
-    path('company/', include('employee.urls')),
+    path('employee/', include('employee.urls')),
 ]
