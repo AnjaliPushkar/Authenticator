@@ -7,16 +7,18 @@ def company(request):
     return render(request, 'employee/company.html')
 
 def A(request):
-    return render(request, 'employee/A.html')
+    employee = A_data.objects
+    # return render(request, 'blog/home2.html', {'blog':blog})
+    return render(request, 'employee/A.html', {'employee':employee})
 
 def insert(request):
     if request.method == 'POST':
-        if request.POST['certi_no'] and request.POST['name'] and request.POST['cname'] and request.POST['fname'] and request.FILES['image']:
+        if request.POST['certi_no'] and request.POST['username'] and request.POST['course'] and request.POST['father'] and request.FILES['image']:
                 A = A_data()
                 A.certi_no = request.POST['certi_no']
-                A.name = request.POST['name']
-                A.cname = request.POST['cname']
-                A.fname = request.POST['fname']
+                A.username = request.POST['username']
+                A.course = request.POST['course']
+                A.father = request.POST['father']
                 A.image = request.FILES['image']
                 A.save()
                 return redirect('/employee/' + str(A.id))

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="connectionsheet.css">
+  <title>{% block title%} {% endblock %}</title>
+    <style>
+      {% block css %}
+       {% endblock %}
+ </style>
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="flex">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fiexd-top">
+          <button class="btn btn-lg navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand order-1 mr-auto" href="#">Authenticator</a>
+          <div class="loginbutton order-3">
+            <a href="{% url 'login' %}">
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">Login</button>
+          </a>
+          <a href="{% url 'signup' %}">
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">Sign up</button>
+          </div>
+        </a>
+          <div class="collapse navbar-collapse order-2" id="navbarNav">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<main role="main">
+  <div class='container'>
+    {% block content %}
+
+    {% endblock %}
+  </div>
+</main>
+
+  {% block body %} {% endblock %}
+<style>
+/*style for login page*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:#212529;
+  color: white;
+  padding: 9px 15px;
+  margin: 8px 16px 8px 8px;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.nav-container {
+  display:inline;
+}
+
+.navbar-toggler button {
+  display: block;
+  width: 2rem;
+}
+
+.loginbutton{
+  margin-right: 4%;
+}
+
+.loginbutton button{
+  color: white;
+}
+
+.loginbutton button:hover{
+  opacity: 0.8;
+  color: white;
+}
+
+.btn-link {
+  box-shadow: 1px 2px 5px blue;
+  text-decoration: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+/*style for Register page*/
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 1rem 10rem;
+}
+
+</style>

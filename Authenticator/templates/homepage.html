@@ -6,9 +6,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="connectionsheet.css">
     <title></title>
   </head>
+  {% block content %}
   <body>
     <div class="nav-container">
       <div class="flex">
@@ -18,33 +19,13 @@
           </button>
           <a class="navbar-brand order-1 mr-auto" href="#">Authenticator</a>
           <div class="loginbutton order-3">
-              <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-link"style="width:auto; text-decoration:none;">Login</button>
-            <div id="id01" class="modal">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <form class="modal-content animate" action="#" method="post">
-                  <div class="container">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                  </div>
-                  <div class="login-container">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-                    <label>
-                      <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
-                    <br />
-                    <button class="btnpsw" type="submit">Login</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                  </div>
-                  <div class="cancel-container" style="background-color:#f1f1f1">
-                    <span class="new-user">New user? <a href="Registerpage.html">Register Now</a></span><br />
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <a href="{% url 'login' %}">
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">Login</button>
+          </a>
+          <a href="{% url 'signup' %}">
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">Sign up</button>
           </div>
+        </a>
           <div class="collapse navbar-collapse order-2" id="navbarNav">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
@@ -64,16 +45,67 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
-  <script>
-// Get the modal
-var modal = $("#id01");
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+</body>
+{% endblock %}
 </html>
+
+{% block css %}
+<style>
+/*style for login page*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:#212529;
+  color: white;
+  padding: 9px 15px;
+  margin: 8px 16px 8px 8px;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.nav-container {
+  display:inline;
+}
+
+.navbar-toggler button {
+  display: block;
+  width: 2rem;
+}
+
+.loginbutton{
+  margin-right: 4%;
+}
+
+.loginbutton button{
+  color: white;
+}
+
+.loginbutton button:hover{
+  opacity: 0.8;
+  color: white;
+}
+
+.btn-link {
+  box-shadow: 1px 2px 5px blue;
+  text-decoration: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+/*style for Register page*/
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 1rem 10rem;
+}
+
+</style>
+{% endblock %}

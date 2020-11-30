@@ -24,24 +24,17 @@
 <a href="{% url 'insert' %}">
 <button type="button" class="btn btn-dark">Insert</button>
 </a>
-{% for A in employee.all %}
+<!-- {% for A in employee.all %} -->
 <div>
   <div class="card" style="width: 18rem;">
-    <img src="{{A.image.url}}" class="card-img-top" alt="...">
-    <div class="col-6" onclick="window.location='{% url 'detail' A.id %}';" style="cursor: pointer;"">
+    <div class="col-2" onclick="window.location='{% url 'detail' A.id %}';" style="cursor: pointer;">
+    <img src="{{ A.image }}" class="img-fluid" />
+    <!-- <img src="{{A.image.media}}" class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">{{ A.certi_no }}</h5>
     </div>
-  </div>
-
-
+</div>
   </div>
 </div>
-{% endfor %}
+<!-- {% endfor %} -->
 {% endblock %}
-
-<!-- <ul class="list-group list-group-flush">
-  <li class="list-group-item">{{ A.name }}</li>
-  <li class="list-group-item">{{ A.cname }}</li>
-  <li class="list-group-item">{{ A.fname }}</li>
-</ul> -->
