@@ -18,20 +18,30 @@
       }
       {% endblock %}
  </style>
-<h5 class="card-title">A</h5>
+
+<!-- <h5 class="card-title">A</h5> -->
+{% block content %}
 <a href="{% url 'insert' %}">
 <button type="button" class="btn btn-dark">Insert</button>
 </a>
+{% for A in employee.all %}
 <div>
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="{{A.image.url}}" class="card-img-top" alt="...">
+    <div class="col-6" onclick="window.location='{% url 'detail' A.id %}';" style="cursor: pointer;"">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">{{ A.certi_no }}</h5>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
+  </div>
+
+
   </div>
 </div>
+{% endfor %}
+{% endblock %}
+
+<!-- <ul class="list-group list-group-flush">
+  <li class="list-group-item">{{ A.name }}</li>
+  <li class="list-group-item">{{ A.cname }}</li>
+  <li class="list-group-item">{{ A.fname }}</li>
+</ul> -->
