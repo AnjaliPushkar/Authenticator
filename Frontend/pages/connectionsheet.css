@@ -1,0 +1,55 @@
+/*style for login page*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:#212529;
+  color: white;
+  padding: 9px 15px;
+  margin: 8px 16px 8px 8px;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.nav-container {
+  display:inline;
+}
+
+.navbar-toggler button {
+  display: block;
+  width: 2rem;
+}
+
+.loginbutton{
+  margin-right: 4%;
+}
+
+.loginbutton button{
+  color: white;
+}
+
+.loginbutton button:hover{
+  opacity: 0.8;
+  color: white;
+}
+
+.btn-link {
+  box-shadow: 1px 2px 5px blue;
+  text-decoration: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+/*style for Register page*/
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 1rem 10rem;
+}

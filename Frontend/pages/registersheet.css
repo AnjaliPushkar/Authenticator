@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 1rem 10rem;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+}
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=date] {
+  width: 100%;
+  padding: 1rem;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+label[for=Choice]{
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+label[for=photo]{
+  display: block;
+  margin:0.4rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  background: #f1f1f1;
+  margin: 0.4rem 0 1rem 0 ;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+
+
+.small-headings {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color:#8c1aff;
+  color: #8c1aff;
+}
+/* Change styles for extra small screens */
+@media (max-width: 300px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
