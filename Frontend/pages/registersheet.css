@@ -37,7 +37,8 @@ label[for=photo]{
   margin:0.4rem;
 }
 
-textarea {
+textarea{
+  border: none;
   display: block;
   width: 100%;
   background: #f1f1f1;

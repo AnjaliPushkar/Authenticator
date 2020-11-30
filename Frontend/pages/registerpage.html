@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="signupsheet.css">
+    <link rel="stylesheet" href="registersheet.css">
   </head>
   <body>
     <div class="signup-container">
@@ -38,7 +38,16 @@
           <label for="dob"><b>Date Of Birth</b></label>
           <input type="date" name="dob" id="dob" required><br />
           <label for="number"><b>Phone No.</b></label>
-          <input type="text" placeholder="Enter Phone No." id="number" name="number" required>
+          <table>
+            <tr>
+              <td>
+                <input type="text" name="country code"  value="+91" size="2"/>
+              </td>
+              <td>
+                <input type="text"  placeholder="Enter Phone No." name="number" size="10" required><br />
+              </td>
+            </tr>
+          </table>
           <label class="radio" for="Choice"><b>Gender</b></label><br />
             <input type="radio" id="Choice1" name="gender" checked>
             <label for="Choice">Male</label>
