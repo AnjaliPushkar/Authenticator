@@ -12,3 +12,6 @@ def signup(request):
 
 def verify(request):
     return render(request, 'verificationpage.html')
+
+def loginemployee(request):
+    return render(request, 'loginemployee.html')
