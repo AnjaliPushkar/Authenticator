@@ -1,47 +1,21 @@
-<h2>detail page</h2>
+<h2><b>Full data</h2>
 
 
 {% block content %}
 
 <div class="row">
-
   <div class="col-10">
-      <h1>NAme :{{ A.certi_no }}</h1></a><br />
+      <h2>Certificate ID : {{ A.certi_no }}</h2>
   </div>
-</div>
-<div class="row">
-
   <div class="col-10">
-      <h1>NAme :{{ A.username }}</h1></a><br />
+      <h2>Certificate Holder's Name : {{ A.username }}</h2>
+  </div>
+  <div class="col-10">
+      <h2>Course Name : {{ A.course }}</h2>
+  </div>
+  <div class="col-10">
+      <h2>Father's Name : {{ A.father }}</h2>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-8">
-    <img src="{{ A.image.url }}" class="img-fluid" />
-  </div>
-</div>
-<br />
-
-<div class="row">
-  <div class="col-8">
-    <p>NAm: {{ A.username }}</p>
-  </div>
-</div>
-
-<!-- {% for A in employee.all %} -->
-<div>
-  <div class="card" style="width: 18rem;">
-    <img src="{{A.image.url}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{ A.certi_no }}</h5>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ A.username }}</li>
-      <li class="list-group-item">{{ A.course }}</li>
-      <li class="list-group-item">{{ A.father }}</li>
-    </ul>
-  </div>
-</div>
-<!-- {% endfor %} -->
 {% endblock %}

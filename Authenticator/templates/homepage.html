@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+{% load static %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,6 +20,9 @@
           </button>
           <a class="navbar-brand order-1 mr-auto" href="#">Authenticator</a>
           <div class="loginbutton order-3">
+            <a href="{% url 'company' %}">
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">Employee</button>
+          </a>
             <a href="{% url 'login' %}">
             <button class="btn btn-link" style="width:auto; text-decoration:none;">Login</button>
           </a>
@@ -26,6 +30,7 @@
             <button class="btn btn-link" style="width:auto; text-decoration:none;">Sign up</button>
           </div>
         </a>
+
           <div class="collapse navbar-collapse order-2" id="navbarNav">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
@@ -41,6 +46,9 @@
           </div>
         </nav>
       </div>
+    </div>
+    <div class="image">
+      <img src="{% static '1.jpg' %}">
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
