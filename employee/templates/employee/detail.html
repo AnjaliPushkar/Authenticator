@@ -1,9 +1,12 @@
-<h2><b>Full data</h2>
+{% extends 'employee/basic.html' %}
 
-
-{% block content %}
+{% load static %}
+{% block body %}
 
 <div class="row">
+  <div class="col-8">
+    <img src="{{ A.image.url }}" class="img-fluid" />
+  </div>
   <div class="col-10">
       <h2>Certificate ID : {{ A.certi_no }}</h2>
   </div>

@@ -1,8 +1,8 @@
 from django.contrib import auth
 from django.shortcuts import render
 
-def homepage(request):
-    return render(request, 'homepage.html')
+def home(request):
+    return render(request, 'home.html')
 
 def login(request):
     return render(request, 'login.html')

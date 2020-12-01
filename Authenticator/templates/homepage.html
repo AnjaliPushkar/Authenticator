@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="connectionsheet.css">
-    <title></title>
+    <title>{% block title%} {% endblock %}</title>
+    <style>
+      {% block css %}
+       {% endblock %}
+ </style>
   </head>
-  {% block content %}
   <body>
     <div class="nav-container">
       <div class="flex">
@@ -18,24 +21,21 @@
           <button class="btn btn-lg navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand order-1 mr-auto" href="#">Authenticator</a>
+          <a class="navbar-brand order-1 mr-auto" href="{% url 'home' %}">Authenticator</a>
           <div class="loginbutton order-3">
             <a href="{% url 'loginemployee' %}">
-            <button class="btn btn-link" style="width:auto; text-decoration:none;">Employee</button>
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">Employee Login</button>
           </a>
             <a href="{% url 'login' %}">
-            <button class="btn btn-link" style="width:auto; text-decoration:none;">Login</button>
+            <button class="btn btn-link" style="width:auto; text-decoration:none;">User Login</button>
           </a>
           <a href="{% url 'signup' %}">
             <button class="btn btn-link" style="width:auto; text-decoration:none;">Sign up</button>
           </div>
         </a>
 
-          <div class="collapse navbar-collapse order-2" id="navbarNav">
+          <!-- <div class="collapse navbar-collapse order-2" id="navbarNav">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
@@ -43,22 +43,27 @@
                 <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </nav>
       </div>
     </div>
+    <main role="main">
+      <div class='container'>
 
-    <div class="image" id="image">
-      <img src="{% static '1.jpg' %}" id="image">
-    </div>
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </main>
+      {% block body %} {% endblock %}
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-{% endblock %}
 </html>
 
-{% block css %}
 <style>
 /*style for login page*/
 body {
@@ -122,4 +127,3 @@ button:hover {
 }
 
 </style>
-{% endblock %}

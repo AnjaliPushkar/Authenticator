@@ -1,28 +1,7 @@
-<html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Hospital Management</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href = "{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}">
-    <style>
-      {% block css %}
-
-      .navbar {
-        background-color: DarkSlateGray;
-      }
-      {% endblock %}
- </style>
-
-<!-- <h5 class="card-title">A</h5> -->
-{% block content %}
+{% extends 'employee/basic.html' %}
+{% block body %}
 <a href="{% url 'insert' %}">
-<button type="button" class="btn btn-dark">Insert</button>
+<button type="button" class="btn btn-dark">Insert Data</button>
 </a>
 <br><br>
 {% for A in employee.all %}

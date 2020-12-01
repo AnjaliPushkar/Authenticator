@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
-  </head>
-  <body>
+{% extends 'homepage.html' %}
+{% block body %}
     <h1>Verify Your Certificate</h1>
     <form class="form-inline" action="#" method="post">
       <div class="form-group">
-        <label for="certiid" class="sr-only">Certificate No</label>
+        <label for="certiid">Certificate No</label>
         <input type="text" class="form-control" name="certificateno" id="certificateno" placeholder="Enter Certificate No" required>
-        <label for="courseid">Course Name</label>
+  <label for="courseid">Course Name</label>
         <input type="text" class="form-control" name="coursename" id="courseid" placeholder="Enter Course Name" required>
       </div>
       <button type="submit" class="breadboard-btn-primary">Verify</button>
     </form>
-  </body>
-</html>
+{% endblock %}
