@@ -20,7 +20,7 @@
           </button>
           <a class="navbar-brand order-1 mr-auto" href="#">Authenticator</a>
           <div class="loginbutton order-3">
-            <a href="{% url 'company' %}">
+            <a href="{% url 'loginemployee' %}">
             <button class="btn btn-link" style="width:auto; text-decoration:none;">Employee</button>
           </a>
             <a href="{% url 'login' %}">
@@ -47,8 +47,9 @@
         </nav>
       </div>
     </div>
-    <div class="image">
-      <img src="{% static '1.jpg' %}">
+
+    <div class="image" id="image">
+      <img src="{% static '1.jpg' %}" id="image">
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -64,6 +65,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#image {
+  background-size: 100% 100% ;
+  background-repeat: no-repeat;
+  /* background: url(static/1.jpg); */
+}
 /* Set a style for all buttons */
 button {
   background-color:#212529;
