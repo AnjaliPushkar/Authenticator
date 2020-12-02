@@ -27,4 +27,4 @@ urlpatterns = [
     path('signup/', views.signup, name = 'signup'),
     path('verify/', views.verify, name='verify'),
     path('employee/', include('employee.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
