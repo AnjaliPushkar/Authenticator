@@ -156,10 +156,10 @@ span.psw {
 {% csrf_token %}
 
   <body class="loginpage">
-    <form class="modal-content animate" action="{% url 'company' %}" method="post">
+    <form class="modal-content animate"  id="id02" action="{% url 'company' %}" method="post">
       {% csrf_token %}
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
 
       <div class="container">
@@ -180,14 +180,14 @@ span.psw {
 
       <div class="container" style="background-color:#f1f1f1">
         <span class="new-user">New user? <a href="#">Sign up</a></span><br />
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
     </form>
   </body>
   <script>
 // Get the modal
-var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

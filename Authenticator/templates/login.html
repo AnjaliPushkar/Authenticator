@@ -156,7 +156,7 @@ span.psw {
 {% csrf_token %}
 
   <body class="loginpage">
-    <form class="modal-content animate" action="{% url 'verify' %}" method="post">
+    <form class="modal-content animate" id="id01" action="{% url 'verify' %}" method="post">
       {% csrf_token %}
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
