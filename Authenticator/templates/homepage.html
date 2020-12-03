@@ -47,7 +47,7 @@
         </nav>
       </div>
     </div>
-    <main role="main">
+    <main role="main" style="width:0; height:0;">
       <div class='container'>
 
         {% block content %}
@@ -71,13 +71,12 @@ body {
 }
 
 #image {
+  background-image: url(static/3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100% ;
   width: 100% ;
-  
-
   /* background: url(static/1.jpg); */
 }
 /* Set a style for all buttons */
@@ -128,7 +127,7 @@ button:hover {
 
 /* Add padding to containers */
 .container {
-  padding: 1rem 10rem;
+   padding: 1rem 10rem;
 }
 
 </style>

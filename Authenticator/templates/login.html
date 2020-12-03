@@ -9,12 +9,13 @@ body {
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 10px 18px;
-  margin: 2px 0 18px 0;
-  display: inline-block;
+  width: 90%;
+  padding: 0.8rem 1.2rem;
+  margin: 0.2rem 0 1rem 2rem;
+  display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  justify-content: center:
 }
 
 /* Set a style for all buttons */
@@ -75,8 +76,10 @@ button:hover {
   background-color: #f44336;
 }
 
-.container {
-  padding: 16px;
+.uesr-container {
+  justify-content:center;
+  padding: 1rem 10rem;
+  margin: 2rem;
 }
 
 span.psw {
@@ -85,7 +88,7 @@ span.psw {
 }
 
 /* The Modal (background) */
-.modal {
+<!-- .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -97,7 +100,7 @@ span.psw {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
-}
+} -->
 
 /* Modal Content/Box */
 .modal-content {
@@ -162,7 +165,7 @@ span.psw {
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
 
-      <div class="container">
+      <div class="user-container">
         <label for="uname"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" >
 
@@ -175,7 +178,7 @@ span.psw {
         </label>
       </div>
 
-      <div class="container" style="background-color:#f1f1f1">
+      <div class="user-container" style="background-color:#f1f1f1">
         <span class="new-user">New user? <a href="#">Sign up</a></span><br />
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
