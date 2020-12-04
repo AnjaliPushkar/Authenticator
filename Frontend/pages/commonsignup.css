@@ -17,7 +17,7 @@ body, html {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 33.33%
+  width: 33.33%;
 }
 
 .tablink:hover {
@@ -26,8 +26,79 @@ body, html {
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
+  color: black;
+  /* padding: 100px 20px; */
   height: 100%;
+  width: 100%;
+  float: left;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction:column;
+  flex: 50%;
+  flex-wrap: wrap;
+  padding: 1vw 15vw;
+   justify-content:center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=date] {
+  width: 100%;
+  padding: 1rem;
+  margin: 5px 0 22px 0;
+  display:inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+label[for=Choice]{
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+label[for=photo]{
+  display: block;
+  margin:0.4rem;
+}
+
+textarea{
+  border: none;
+  display: block;
+  width: 100%;
+  background: #f1f1f1;
+  margin: 0.4rem 0 1rem 0 ;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.button{
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 10%;
+  height: 10%;
+}
+
+.small-headings {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color:#8c1aff;
+  color: #8c1aff;
+}
+/* Change styles for extra small screens */
+@media (max-width: 300px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }

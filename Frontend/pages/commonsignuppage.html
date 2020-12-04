@@ -9,15 +9,110 @@
     <button class="tablink" onclick="openPage('student', this, 'blue')" id="defaultOpen">Sign up as Student</button>
     <button class="tablink" onclick="openPage('teacher', this, 'blue')">Signup as Teacher</button>
     <button class="tablink" onclick="openPage('organization', this, 'blue')">Signup as Employee</button>
-    <div id="teacher" class="tabcontent">
-      <h3>Signup as Teacher</h3>
-    </div>
     <div id="student" class="tabcontent">
-      <h3>Signup as Student</h3>
+      <form class="" action="{% url 'login' %}" method="post">
+        <div class="flex-container">
+          <h1>Registration</h1>
+          <p>Fill out the form carefully for registration.</p>
+          <h3 class="small-headings">Account Details</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" id="email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email"><b>Confirm Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" id="email" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            </div>
+            <div class="col-md-6">
+              <label for="psw-repeat"><b>Confirm Password</b></label>
+              <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required>
+            </div>
+          </div>
+          <h3 class="small-headings">Personal Details</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="email"><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="name" id="name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email"><b>Last Name</b></label>
+              <input type="text" placeholder="Enter last Name" name="name" id="name" required>
+            </div>
+          </div>
+          <label for="dob"><b>Date Of Birth</b></label>
+          <input type="date" name="dob" id="dob" required><br />
+          <label for="number"><b>Phone No.</b></label>
+          <table>
+            <tr>
+              <td>
+                <input type="text" name="country code"  value="+91" size="2"/>
+              </td>
+              <td>
+                <input type="text"  placeholder="Enter Phone No." name="number" size="10" required><br />
+              </td>
+            </tr>
+          </table>
+          <label class="radio" for="Choice"><b>Gender</b></label><br />
+            <input type="radio" id="Choice1" name="gender" checked>
+            <label for="Choice">Male</label>
+            <input type="radio" id="Choice2" name="gender">
+            <label for="Choice">Female</label>
+            <input type="radio" id="Choice3" name="gender">
+            <label for="Choice">Others</label><br /><br />
+          <label for="address"><b>Address</b></label>
+          <textarea name="adress" rows="4"></textarea>
+          <label for="state"><b>State</b></label>
+          <input type="text" placeholder="" name="state" id="state" required>
+          <label for="uname"><b>City</b></label>
+          <input type="text" placeholder="" name="city" id="city" required>
+          <label for="photo"><b>Photo</b></label>
+          <input type="file" name="photo" id="photo" accept="image/*"><br>
+          <label for="photo"><b>Student Id</b></label>
+          <input type="file" name="photo" id="photo" accept="image/pdf"><br>
+          <!-- <input  class="button" type="submit" name="" value="submit"> -->
+          <button class="button" type="submit" onclick="">Submit</button>
+      </form>
     </div>
-
+    <div id="teacher" class="tabcontent">
+      <form class="" action="{% url 'login' %}" method="post">
+        <div class="flex-container">
+          <h1>Registration</h1>
+          <p>Fill out the form carefully for registration.</p>
+          <!-- <hr> -->
+          <div class="flex-items">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          </div>
+          <div class="flex-items">
+            <label for="email"><b>Confirm Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          </div>
+        </div>
+      </form>
+    </div>
     <div id="organization" class="tabcontent">
-      <h3>Signup as Organization</h3>
+      <form class="" action="{% url 'login' %}" method="post">
+        <div class="flex-container">
+          <h1>Registration</h1>
+          <p>Fill out the form carefully for registration.</p>
+          <!-- <hr> -->
+          <div class="flex-items">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          </div>
+          <div class="flex-items">
+            <label for="email"><b>Confirm Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          </div>
+        </div>
+      </form>
     </div>
     <script>
     function openPage(pageName,elmnt,color) {
