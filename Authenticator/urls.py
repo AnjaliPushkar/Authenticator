@@ -26,5 +26,6 @@ urlpatterns = [
     path('loginemployee/', views.loginemployee, name = 'loginemployee'),
     path('signup/', views.signup, name = 'signup'),
     path('verify/', views.verify, name='verify'),
+    path('searchbar/', views.searchbar, name='searchbar'),
     path('employee/', include('employee.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

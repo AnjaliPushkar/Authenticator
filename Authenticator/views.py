@@ -1,4 +1,5 @@
 from django.contrib import auth
+from employee.models import A_data
 from django.shortcuts import render
 
 def home(request):
@@ -15,3 +16,9 @@ def verify(request):
 
 def loginemployee(request):
     return render(request, 'loginemployee.html')
+
+def searchbar(request):
+    if request.method == 'GET':
+        search = request.GET.get('certificateno')
+        posts = A_data.objects.all().filter(certi_no = search)
+        return render(request, 'searchbar.html', {'posts' : posts})
