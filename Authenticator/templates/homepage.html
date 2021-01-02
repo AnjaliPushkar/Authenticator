@@ -1,163 +1,65 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE HTML>
 {% load static %}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="connectionsheet.css">
+<html>
+	<head>
     <title>{% block title%} {% endblock %}</title>
     <style>
       {% block css %}
        {% endblock %}
  </style>
-  </head>
-  <body>
-    <div class="nav-container">
-      <div class="flex">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fiexd-top">
-          <button class="btn btn-lg navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand order-1 mr-auto" href="{% url 'home' %}">Authenticator</a>
-          <div class="loginbutton order-3">
-            <a href="{% url 'loginemployee' %}">
-            <button class="btn btn-link" style="width:auto; text-decoration:none;">Employee Login</button>
-          </a>
-            <a href="{% url 'login' %}">
-            <button class="btn btn-link" style="width:auto; text-decoration:none;">User Login</button>
-          </a>
-          <a href="{% url 'signup' %}">
-            <button class="btn btn-link" style="width:auto; text-decoration:none;">Sign up</button>
-          </div>
-        </a>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
 
-          <!-- <div class="collapse navbar-collapse order-2" id="navbarNav">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-          </div> -->
+			<!-- Header -->
+      <header id="header">
+        <h1 id="logo"><a href="{% url 'home' %}">AUTHENTICATOR</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>
+              <a href="#">Login</a>
+              <ul>
+                <li><a href="{% url 'loginemployee' %}">Organization</a></li>
+                <li><a href="{% url 'login' %}">User</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Signup</a>
+              <ul>
+                <li><a href="{% url 'signup' %}">Organization</a></li>
+                <li><a href="{% url 'signup' %}">User</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="#">Elements</a></li> -->
+            <!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
+          </ul>
         </nav>
-      </div>
-    </div>
-    <main role="main" style="width:0; height:0;">
-      <div class='container'>
+      </header>
+      <main role="main" style="width:0; height:0;">
+        <div class='container'>
 
-        {% block content %}
+          {% block content %}
 
-        {% endblock %}
-      </div>
-    </main>
-      {% block body %} {% endblock %}
+          {% endblock %}
+        </div>
+      </main>
+        {% block body %} {% endblock %}
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}" ></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}" ></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
 </html>
-
-<style>
-/*style for login page*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#image {
-  /* background-image: url(static/3.jpg); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100% ;
-  width: 100% ;
-  /* background: url(static/1.jpg); */
-}
-
-.image
-{
-  position: relative;
-  top: 0;
-  left: 0;
-  /* background-image: radial-gradient(circle, yellow, green); */
-}
-.circle
-{
-  position: absolute;
-  top: 0;
-  left: 30%;
-  height:100%;
-  color: red;
-  opacity: 0.7;
-  border-radius: 50%;
-  background-position: center;
-}
-
-.text {
-  position: absolute;
-  top: 39%;
-  left:31%;
-  width: 40%;
-  text-align: center;
-  font-size:3.5vw;
-  color: blue;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color:#212529;
-  color: white;
-  padding: 9px 15px;
-  margin: 8px 16px 8px 8px;
-  border: none;
-  border-radius: .25rem;
-  cursor: pointer;
-}
-
-.nav-container {
-  display:inline;
-}
-
-.navbar-toggler button {
-  display: block;
-  width: 2rem;
-}
-
-.loginbutton{
-  margin-right: 4%;
-}
-
-.loginbutton button{
-  color: white;
-}
-
-.loginbutton button:hover{
-  opacity: 0.8;
-  color: white;
-}
-
-.btn-link {
-  box-shadow: 1px 2px 5px blue;
-  text-decoration: none;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-/*style for Register page*/
-* {
-  box-sizing: border-box;
-}
-
-/* Add padding to containers */
-.container {
-   padding: 1rem 10rem;
-}
-
-</style>
