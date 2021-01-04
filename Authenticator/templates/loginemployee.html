@@ -76,8 +76,12 @@ hr {
 
 {% block body %}
 <body>
+  <header class="major">
+    <h2>LOGIN</h2>
+    <p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+  </header>
   <div class="signup-container">
-    <form class="" action="{% url 'company' %}" method="post">
+    <form class="" action="{% url 'A' %}" method="post">
       {% csrf_token %}
       <div class="container">
         <label for="email"><b>Usename</b></label>
