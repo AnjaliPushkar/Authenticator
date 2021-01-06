@@ -1,24 +1,91 @@
-{% extends 'employee/basic.html' %}
-
+<!DOCTYPE HTML>
 {% load static %}
-{% block content %}
+<html>
+	<head>
+		<title>Right Sidebar - Landed by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
 
-<div class="row">
-  <div class="col-8">
-    <img src="{{ A.image.url }}" class="img-fluid" />
-  </div>
-  <div class="col-10">
-      <h2>Certificate ID : {{ A.certi_no }}</h2>
-  </div>
-  <div class="col-10">
-      <h2>Certificate Holder's Name : {{ A.username }}</h2>
-  </div>
-  <div class="col-10">
-      <h2>Course Name : {{ A.course }}</h2>
-  </div>
-  <div class="col-10">
-      <h2>Father's Name : {{ A.father }}</h2>
-  </div>
-</div>
+			<!-- Header -->
+			<header id="header">
+        <h1 id="logo"><a href="{% url 'home' %}">AUTHENTICATOR</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>
+              <a href="{% url 'home' %}">Logout</a>
+            </li>
 
-{% endblock %}
+          </ul>
+        </nav>
+      </header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<!-- <header class="major">
+							<h2>Right Sidebar</h2>
+
+							<p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+						</header> -->
+						<div class="row gtr-150">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<img src="{{ A.image.url }}" class="img-fluid" height="300" width="650"/></a>
+
+									</section>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section id="sidebar">
+										<section>
+											<div class="col-10">
+									        <h3>Certificate ID : {{ A.certi_no }}</h3>
+									    </div>
+									    <div class="col-10">
+									        <h3>Certificate Holder's Name : {{ A.username }}</h3>
+									    </div>
+									    <div class="col-10">
+									        <h3>Course Name : {{ A.course }}</h3>
+									    </div>
+									    <div class="col-10">
+									        <h3>Father's Name : {{ A.father }}</h3>
+									    </div>
+
+										</section>
+										<hr />
+
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+
+
+		</div>
+
+		<!-- Scripts -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.scrolly.min.js' %}" ></script>
+    <script src="{% static 'assets/js/jquery.dropotron.min.js' %}" ></script>
+    <script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+	</body>
+</html>

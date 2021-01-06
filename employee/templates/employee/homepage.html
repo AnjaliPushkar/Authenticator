@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 {% load static %}
 <html>
+	<head>
 
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -29,21 +29,9 @@
           <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li>
-              <a href="#">Login</a>
-              <ul>
-                <li><a href="{% url 'loginemployee' %}">Organization</a></li>
-                <li><a href="{% url 'login' %}">User</a></li>
-              </ul>
+              <a href="{% url 'home' %}">Logout</a>
             </li>
-            <li>
-              <a href="#">Signup</a>
-              <ul>
-                <li><a href="{% url 'signup' %}">Organization</a></li>
-                <li><a href="{% url 'signup' %}">User</a></li>
-              </ul>
-            </li>
-            <!-- <li><a href="#">Elements</a></li> -->
-            <!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
+						<li><a href="{% url 'insert' %}">Insert Data</a></li>
           </ul>
         </nav>
       </header>

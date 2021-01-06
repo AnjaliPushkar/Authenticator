@@ -1,18 +1,30 @@
-{% extends 'employee/basic.html' %}
+{% extends 'employee/homepage.html' %}
 {% block body %}
-<a href="{% url 'insert' %}">
-<button type="button" class="btn btn-dark">Insert Data</button>
-</a>
-<br><br>
-{% for A in employee.all %}
+<header class="major">
+  <h3>Certificate Information</h3>
+</header>
+  <section>
+    <!-- <h3>Data</h3> -->
 
-    <div class="col-2" onclick="window.location='{% url 'detail' A.id %}';" style="cursor: pointer;">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Cerificate ID</th>
+            <th>Course Title</th>
+            <th>Student Name</th>
+          </tr>
+        </thead>
+        {% for A in employee.all %}
+        <tbody>
 
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Cerificate ID : {{ A.certi_no }}
-      </div>
-    </div>
-</div>
+          <tr onclick="window.location='{% url 'detail' A.id %}';" style="cursor: pointer;">
+            <!-- <div class="col-2" onclick="window.location='{% url 'detail' A.id %}';" style="cursor: pointer;"> -->
+            <td> {{ A.certi_no }}</td>
+            <td>{{ A.course }}</td>
+            <td>{{ A.username }}</td>
+          </tr>
+        </div>
+          <tr>
 {% endfor %}
 {% endblock %}

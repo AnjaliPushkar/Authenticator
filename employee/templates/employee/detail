@@ -76,37 +76,23 @@ hr {
 
 {% block body %}
 <body>
-  <header class="major">
-    <h3>Insert Certificate Information</h3>
-  </header>
-        <div class="container">
-          {% csrf_token %}
-          <form method='POST' action = '{% url 'insert' %}' enctype='multipart/form-data'>
-            {% csrf_token %}
-          <label for="certi_no"><b>Certificate ID</b></label>
-          <input type="text" placeholder="Enter ID" name="certi_no" required><br>
+  <div class="row">
+    <div class="col-8">
+      <img src="{{ A.image.url }}" class="img-fluid" />
+    </div>
+    <div class="col-10">
+        <h2>Certificate ID : {{ A.certi_no }}</h2>
+    </div>
+    <div class="col-10">
+        <h2>Certificate Holder's Name : {{ A.username }}</h2>
+    </div>
+    <div class="col-10">
+        <h2>Course Name : {{ A.course }}</h2>
+    </div>
+    <div class="col-10">
+        <h2>Father's Name : {{ A.father }}</h2>
+    </div>
+  </div>
 
-          <label for="username"><b>Certificate holder name</b></label>
-          <input type="text" placeholder="Enter Username" name="username" required><br>
-
-          <label for="course"><b>Course name</b></label>
-          <input type="text" placeholder="course name" name="course" required><br>
-
-          <label for="father"><b>Father's name</b></label>
-          <input type="text" placeholder="Enter Father's name" name="father" required><br>
-
-          Image:
-          <br />
-          <input type='file' name='image' />
-          <br />
-
-          <label for="fname"><b>Add image</b></label>
-          <input type="image" placeholder="image" name="image"></input><br>
-
-           <button type="submit">Insert</button>
-
-      </div>
-    <!-- </form> -->
-  <!-- </div> -->
 </body>
 {% endblock %}
