@@ -1,0 +1,65 @@
+<body>
+  <header class="major">
+    <h2>Registration</h2>
+    <p>Fill out the form carefully for registration.</p>
+  </header>
+  <div class="signup-container">
+    <form class="" action="#" method="post">
+      <div class="container">
+        <h3 class="small-headings">Account Details</h3>
+        <!--<div class="flex-container">
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="email"><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="name" id="name" required>
+            </div>
+            <div class="col-sm-6">
+              <label for="email"><b>Last Name</b></label>
+              <input type="text" placeholder="Enter last Name" name="name" id="name" required>
+            </div>
+          </div>
+        </div>-->
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <label for="psw-repeat"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required>
+        <h3 class="small-headings">Personal Details</h3>
+        <label for="uname"><b>Organization Name</b></label>
+        <input type="text" placeholder="Enter Full Name" name="name" id="name" required>
+        <!-- <label for="dob"><b>Date Of Birth</b></label>
+        <input type="date" name="dob" id="dob" required><br />
+        <label for="number"><b>Phone No.</b></label> -->
+        <table>
+          <tr>
+            <td>
+              <input type="text" name="country code"  value="+91" size="2"/>
+            </td>
+            <td>
+              <input type="text"  placeholder="Enter Phone No." name="number" size="10" required><br />
+            </td>
+          </tr>
+        </table>
+        <label class="radio" for="Choice"><b>Gender</b></label><br />
+          <input type="radio" id="Choice1" name="gender" checked>
+          <label for="Choice">Male</label>
+          <input type="radio" id="Choice2" name="gender">
+          <label for="Choice">Female</label>
+          <input type="radio" id="Choice3" name="gender">
+          <label for="Choice">Others</label><br /><br />
+        <label for="address"><b>Address</b></label>
+        <textarea name="adress" rows="4"></textarea>
+        <label for="state"><b>State</b></label>
+        <input type="text" placeholder="" name="state" id="state" required>
+        <label for="uname"><b>City</b></label>
+        <input type="text" placeholder="" name="city" id="city" required>
+        <!-- <label for="photo"><b>Photo</b></label>
+        <input type="file" name="photo" id="photo" accept="image/*"><br> -->
+        <label for="photo"><b>Organization Id</b></label>
+        <input type="file" name="photo" id="photo" accept="image/pdf"><br>
+        <button type="submit" onclick="">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
