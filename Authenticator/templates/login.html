@@ -24,11 +24,11 @@ input[type=text], input[type=password], input[type=date] {
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: #181818;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, textarea:focus {
-  background-color: #ddd;
+  background-color: #181818;
   outline: none;
 }
 
@@ -46,13 +46,13 @@ textarea{
   border: none;
   display: block;
   width: 100%;
-  background: #f1f1f1;
+  background: #181818;
   margin: 0.4rem 0 1rem 0 ;
 }
 
 /* Overwrite default styles of hr */
 hr {
-  border: 1px solid #f1f1f1;
+  border: 1px solid #181818;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -79,7 +79,7 @@ hr {
 <body>
   <header class="major">
     <h2>LOGIN</h2>
-    <p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+    <p>Fill out this form carefully</p>
   </header>
   <div class="signup-container">
     <form class="" action="{% url 'verify' %}" method="post">
@@ -92,9 +92,9 @@ hr {
 
         <button type="submit" onclick="{% url 'company' %}">Login</button>
 
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        <!-- <label>
+           <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label> -->
 
       </div>
       <!-- <div class="container" style="background-color:#f1f1f1">
