@@ -1,6 +1,8 @@
 from django.contrib import auth
 from employee.models import A_data
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User, auth
+from django.contrib import auth
 
 def home(request):
     return render(request, 'home.html')
@@ -9,10 +11,37 @@ def check(request):
     return render(request, 'check.html')
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        user = auth.authenticate(username=request.POST['username'], psw=request.POST['psw'])
+        if user is not None:
+            auth.login(request, user)
+            return render(request, 'verificationpage.html')
+        else:
+            return render(request, 'login.html', {'error':'user not found..!!'})
+    else:
+        return render(request, 'login.html')
+
+# def login(request):
+#     return render(request, 'login.html')
+
+# def signup(request):
+#     return render(request, 'signup.html')
 
 def signup(request):
-    return render(request, 'signup.html')
+    if request.method == 'POST':
+        if request.POST['psw'] == request.POST['psw']:
+            try:
+                user = User.objects.get(email=request.POST['email'])
+                return render(request, 'signup.html', {'error': 'Email Id has already been taken'})
+            except User.DoesNotExist :
+                user = User.objects.create_user(username =request.POST['username'], password =request.POST['psw'], email=request.POST['email'])
+                auth.login(request, user)
+                return render(request, 'login.html')
+        else:
+            return render(request, 'signup.html', {'error': 'password not matching'})
+    else:
+        return render(request, 'signup.html')
+
 
 def verify(request):
     return render(request, 'verificationpage.html')

@@ -75,13 +75,20 @@ hr {
 {% endblock %}
 
 {% block body %}
+  {% csrf_token %}
 <body>
   <header class="major">
     <h2>Registration</h2>
     <p>Fill out the form carefully for registration.</p>
   </header>
+  {% if error %}
+  {{error}}
+  <br />
+  <br />
+  {% endif %}
   <div class="signup-container">
-    <form class="" action="{% url 'login' %}" method="post">
+    <form class="" action="{% url 'signup' %}" method="post">
+      {% csrf_token %}
       <div class="container">
         <h3 class="small-headings">Account Details</h3>
         <!--<div class="flex-container">
@@ -101,12 +108,12 @@ hr {
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
         <label for="psw-repeat"><b>Confirm Password</b></label>
-        <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required>
+        <input type="password" placeholder="Confirm Password" name="psw" id="psw-repeat" required>
         <h3 class="small-headings">Personal Details</h3>
         <label for="uname"><b>Full Name</b></label>
-        <input type="text" placeholder="Enter Full Name" name="name" id="name" required>
+        <input type="text" placeholder="Enter Full Name" name="username" id="username" required>
         <label for="dob"><b>Date Of Birth</b></label>
-        <input type="date" name="dob" id="dob" required><br />
+        <input type="date" name="dob" id="dob" ><br />
         <label for="number"><b>Phone No.</b></label>
         <table>
           <tr>
@@ -114,7 +121,7 @@ hr {
               <input type="text" name="country code"  value="+91" size="2"/>
             </td>
             <td>
-              <input type="text"  placeholder="Enter Phone No." name="number" size="10" required><br />
+              <input type="text"  placeholder="Enter Phone No." name="number" size="10" ><br />
             </td>
           </tr>
         </table>
@@ -128,9 +135,9 @@ hr {
         <label for="address"><b>Address</b></label>
         <textarea name="adress" rows="4"></textarea>
         <label for="state"><b>State</b></label>
-        <input type="text" placeholder="" name="state" id="state" required>
+        <input type="text" placeholder="" name="state" id="state" >
         <label for="uname"><b>City</b></label>
-        <input type="text" placeholder="" name="city" id="city" required>
+        <input type="text" placeholder="" name="city" id="city" >
         <label for="photo"><b>Photo</b></label>
         <input type="file" name="photo" id="photo" accept="image/*"><br>
         <label for="photo"><b>Student Id</b></label>
