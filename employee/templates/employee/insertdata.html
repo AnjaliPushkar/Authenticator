@@ -24,11 +24,11 @@ input[type=text], input[type=password], input[type=date] {
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: #181818;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, textarea:focus {
-  background-color: #ddd;
+  background-color: #181818;
   outline: none;
 }
 
@@ -46,13 +46,13 @@ textarea{
   border: none;
   display: block;
   width: 100%;
-  background: #f1f1f1;
+  background: #181818;
   margin: 0.4rem 0 1rem 0 ;
 }
 
 /* Overwrite default styles of hr */
 hr {
-  border: 1px solid #f1f1f1;
+  border: 1px solid #181818;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -95,13 +95,11 @@ hr {
           <label for="father"><b>Father's name</b></label>
           <input type="text" placeholder="Enter Father's name" name="father" required><br>
 
-          Image:
-          <br />
-          <input type='file' name='image' />
-          <br />
-
-          <label for="fname"><b>Add image</b></label>
-          <input type="image" placeholder="image" name="image"></input><br>
+          <label for="photo"><b>Add Image</b></label>
+          <input type="file" name="photo" id="photo" accept="image/pdf"><br>
+          <br>
+          <!-- <label for="fname"><b>Add image</b></label>
+          <input type="image" placeholder="image" name="image"></input><br> -->
 
            <button type="submit">Insert</button>
 

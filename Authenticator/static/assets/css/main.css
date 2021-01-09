@@ -65,6 +65,11 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
+input:-webkit-autofill{
+		-webkit-box-shadow: 0 0 0px 1000px black inset;
+}
+
+
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
