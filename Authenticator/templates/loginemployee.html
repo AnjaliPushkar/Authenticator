@@ -83,19 +83,21 @@ hr {
 <body>
   <header class="major">
     <h2>LOGIN</h2>
-    <p>Fill out this form carefully</p>
+    <p>Login as an Employee or Organizer</p>
   </header>
   <div class="signup-container">
-    <form class="" action="{% url 'A' %}" method="post">
+    <form class="" action="{% url 'loginemployee' %}" method="post">
       {% csrf_token %}
       <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
         <label for="email"><b>Email ID</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" >
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="psw" >
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
         <label for="psw"><b>Security Key</b></label>
-        <input type="password" placeholder="Enter Key" name="key" id="key" >
-        <button type="submit" onclick="{% url 'company' %}">Login</button>
+        <input type="password" placeholder="Enter Key" name="key" id="key" required>
+        <button type="submit" >Login</button>
 
         <!-- <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me

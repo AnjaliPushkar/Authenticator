@@ -1,4 +1,30 @@
-{% extends 'homepage.html' %}
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Verification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+        <h1 id="logo"><a href="{% url 'home' %}">AUTHENTICATOR</a></h1>
+        <nav id="nav">
+          <ul>
+            <!-- <li><a href="{% url 'verify' %}">Back</a></li> -->
+
+            <li>
+              <a href="{% url 'home' %}">Logout</a>
+            </li>
+
+          </ul>
+        </nav>
+      </header>
 
 {% block body %}
     <h1>Verify Your Certificate</h1>
@@ -7,9 +33,27 @@
         <label for="certiid">Certificate No</label>
         <input type="text" class="form-control" name="certificateno" id="certificateno" placeholder="Enter Certificate No" required><br>
 <br>
-  <label for="courseid">Course Name</label>
-        <input type="text" class="form-control" name="coursename" id="courseid" placeholder="Enter Course Name" required>
+  <!-- <label for="courseid">Course Name</label>
+        <input type="text" class="form-control" name="coursename" id="coursename" placeholder="Enter Course Name" required> -->
       </div>
       <button type="submit" class="breadboard-btn-primary">Verify</button>
     </form>
 {% endblock %}
+
+
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.scrolly.min.js' %}" ></script>
+		<script src="{% static 'assets/js/jquery.dropotron.min.js' %}" ></script>
+		<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+		<script src="{% static 'assets/js/browser.min.js' %}"></script>
+		<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		<script src="{% static 'assets/js/main.js' %}"></script>
+
+
+	</body>
+</html>

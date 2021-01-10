@@ -80,7 +80,7 @@ hr {
   {% csrf_token %}
   <header class="major">
     <h2>LOGIN</h2>
-    <p>Fill out this form carefully</p>
+    <p>Login and Verify Cerificates</p>
   </header>
 
       {% if error %}
@@ -93,12 +93,12 @@ hr {
     <form class="" action="{% url 'login' %}" method="post">
       {% csrf_token %}
       <div class="container">
-        <label for="email"><b>Email ID</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" >
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Full Name" name="username" id="username" required>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+        <label for="email"><b>Email ID</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" id="password" >
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
         <button type="submit" value='login' >Login</button>
 

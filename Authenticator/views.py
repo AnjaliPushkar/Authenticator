@@ -21,8 +21,18 @@ def login(request):
     else:
         return render(request, 'login.html')
 
-# def login(request):
-#     return render(request, 'login.html')
+def loginemployee(request):
+    if request.method == 'POST':
+        user = auth.authenticate(username=request.POST['username'], password=request.POST['password'], email=request.POST['email'], key='AO64')
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/employee/A')
+            # return render(request, 'employee/A.html')
+        else:
+            return render(request, 'loginemployee.html', {'error':'user not found..!!'})
+    else:
+        return render(request, 'loginemployee.html')
+    # return render(request, 'login.html')
 
 # def signup(request):
 #     return render(request, 'signup.html')
@@ -44,10 +54,11 @@ def signup(request):
 
 
 def verify(request):
+    # return redirect('verificy/');
     return render(request, 'verificationpage.html')
 
-def loginemployee(request):
-    return render(request, 'loginemployee.html')
+# def loginemployee(request):
+#     return render(request, 'loginemployee.html')
 
 def searchbar(request):
     if request.method == 'GET':
