@@ -12,7 +12,7 @@ def check(request):
 
 def login(request):
     if request.method == 'POST':
-        user = auth.authenticate(username=request.POST['username'], psw=request.POST['psw'])
+        user = auth.authenticate(username=request.POST['username'], password=request.POST['password'], email=request.POST['email'])
         if user is not None:
             auth.login(request, user)
             return render(request, 'verificationpage.html')
@@ -29,12 +29,12 @@ def login(request):
 
 def signup(request):
     if request.method == 'POST':
-        if request.POST['psw'] == request.POST['psw']:
+        if request.POST['password'] == request.POST['password2']:
             try:
                 user = User.objects.get(email=request.POST['email'])
                 return render(request, 'signup.html', {'error': 'Email Id has already been taken'})
             except User.DoesNotExist :
-                user = User.objects.create_user(username =request.POST['username'], password =request.POST['psw'], email=request.POST['email'])
+                user = User.objects.create_user(username =request.POST['username'], password =request.POST['password'], email=request.POST['email'])
                 auth.login(request, user)
                 return render(request, 'login.html')
         else:
