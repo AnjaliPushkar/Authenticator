@@ -1,3 +1,106 @@
+{{ error }}
+{% block content %}
+{% if posts %}
+  <h1>Search result found</h1>
+  <br>
+{% load static %}
+{% for i in posts %}
+  <!-- <h2><a href = "/employee/A/{{i.slug}}">{{i.certi_no}} : {{i.snipet}}</a></h2> -->
+  <div class="row">
+    <div class="col-8">
+      <img src="{{ i.image.url }}" class="img-fluid"  width="200" height="200" />
+    </div>
+    <div class="col-10">
+        <h2>Certificate ID : {{ i.certi_no }}</h2>
+    </div>
+    <div class="col-10">
+        <h2>Certificate Holder's Name : {{ i.username }}</h2>
+    </div>
+    <div class="col-10">
+        <h2>Course Name : {{ i.course }}</h2>
+    </div>
+    <div class="col-10">
+        <h2>Father's Name : {{ i.father }}</h2>
+    </div>
+  </div>
+{% endfor %}
+  {% else %}
+    <h1>Search not found</h1>
+{% endif %}
+<!-- /verify/{{i.slug}} -->
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Content -->
+  <section id="content">
+    {{ error }}
+    {% block content %}
+    {% if posts %}
+      <h1>Search result found</h1>
+      <br>
+    {% load static %}
+    {% for i in posts %}
+    <img src="{{ i.image.url }}" class="img-fluid"  width="200" height="200"/></a>
+
+  </section>
+
+</div>
+<div class="col-4 col-12-medium">
+
+<!-- Sidebar -->
+  <section id="sidebar">
+    <section>
+      <div class="col-10">
+          <h3>Certificate ID : {{ i.certi_no }}</h3>
+      </div>
+      <div class="col-10">
+          <h3>Certificate Holder's Name : {{ i.username }}</h3>
+      </div>
+      <div class="col-10">
+          <h3>Course Name : {{ i.course }}</h3>
+      </div>
+      <div class="col-10">
+          <h3>Father's Name : {{ i.father }}</h3>
+      </div>
+      {% endfor %}
+
+        {% else %}
+          <h1>Search not found</h1>
+      {% endif %}
+      <!-- /verify/{{i.slug}} -->
+
+
+      <!-- /verify/{{i.slug}} -->
+      {% endblock %}
+    </section>
+    <hr />
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% extends 'employee/homepage.html' %}
 
 /* {% block title%} Register Here {% endblock %} */
