@@ -101,14 +101,14 @@
 	}
 
 	input:-internal-autofill-selected{
-		background-color: transparent !important;
+		background-color: rgb(28, 29, 38) !important;
 		background-image: none !important;
-		// color: -internal-dark-light(black,white) !important;
+		color: -internal-dark-light(white,black) !important;
 	}
-
-	input:-webkit-autofill {
-	    -webkit-text-fill-color: black !important;
-		}
+	//
+	// input:-webkit-autofill {
+	//     -webkit-text-fill-color: #181818 !important;
+	// 	}
 
 
 	input::-moz-focus-inner {

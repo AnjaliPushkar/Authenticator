@@ -1,3 +1,22 @@
+{% block css %}
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.verify{
+	margin: 15%;
+}
+
+.breadboard-btn-primary{
+	padding: 5px;
+	font-size: 20pt;
+}
+
+</style>
+{% endblock %}
+
 <!DOCTYPE HTML>
 {% load static %}
 <html>
@@ -27,7 +46,8 @@
       </header>
 
 {% block body %}
-    <h1>Verify Your Certificate</h1>
+	<div class="verify">
+		<h1 class="heading">Verify Your Certificate</h1>
     <form class="form-inline" action="{% url 'searchbar' %}" method="get">
       <div class="form-group">
         <label for="certiid">Certificate No</label>
@@ -36,8 +56,10 @@
   <!-- <label for="courseid">Course Name</label>
         <input type="text" class="form-control" name="coursename" id="coursename" placeholder="Enter Course Name" required> -->
       </div>
-      <button type="submit" class="breadboard-btn-primary">Verify</button>
+      <button type="submit" class="breadboard-btn-primary btn-lg">Verify</button>
     </form>
+	</div>
+
 {% endblock %}
 
 
